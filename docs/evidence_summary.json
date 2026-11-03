@@ -1,0 +1,17 @@
+{
+  "checked_on": "2026-11-03",
+  "metrics": {
+    "matched_records": 11607,
+    "unique_filing_keys": 11607,
+    "duplicate_filing_keys": 0,
+    "archive_after_filing": 11585,
+    "changed_friday_week": 11545,
+    "median_lag_calendar_days": 60,
+    "raw_files_rehashed": 11607,
+    "raw_hash_mismatches": 0,
+    "date_mapping_mismatches": 0
+  },
+  "timing_csv_sha256": "b8d5a448989f466f38d810ff065f8fa855ee90a7c08fb90d287edfa467fbfaa7",
+  "original_timing_module_sha256": "1c51f2e67fa904cf4c5824185d7f122330389872bb533b0b42cb22910911ab0a",
+  "reproduction_boundary": "Private source corpus rechecked locally; public example is synthetic. No row-level vendor data included."
+}
