@@ -37,9 +37,9 @@ finite-population acceptance sampling, but its displayed Appendix Eq. (5)
 appears to have a typesetting error, so the calculation does not copy that
 equation. Neither source sets the project's 1% ceiling.
 
-The real 284-letter sample has been frozen with a recorded seed. Its source
-review has **not passed**: as of 18 November 2026, independent adjudications
-completed = **0/284**. Any missed numbered comment or unreadable/unresolved
+The real 284-letter sample has been frozen with a recorded seed and remains
+private. Original-source review is required before this check can clear text
+for production use. Any missed numbered comment or unreadable/unresolved
 original stops this gate for correction and escalation; the case cannot be
 replaced to produce a nominal pass. Even a valid zero-defect result would not
 prove that the population contains no mistakes or clear the rest of the corpus.

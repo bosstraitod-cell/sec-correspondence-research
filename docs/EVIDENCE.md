@@ -42,13 +42,13 @@ statistical significance, forecasting performance, or regime result is establish
 Remaining text-extraction production checks and model/validation decisions remain
 outstanding in the thesis.
 
-The new [quality-audit note](QUALITY_AUDIT.md) reports only the approved
-closing-letter sampling rule and the frozen-draw status as of 2026-11-18.
+The new [quality-audit note](QUALITY_AUDIT.md) reports the approved
+closing-letter sampling rule and the private frozen-draw boundary.
 Its 1% ceiling is project-chosen; its arithmetic is independently checked
 against the [NIST hypergeometric formula](https://www.itl.nist.gov/div898/software/dataplot/refman2/ch8/hyppdf.pdf).
 The public synthetic draw does **not** expose or reproduce the real selected
-accessions, original seed, source files, or reviewer judgments. At this check,
-the independent original-source gate had **0/284 completed judgments**.
+accessions, original seed, source files, or reviewer judgments. It does not
+certify the text for production use.
 
 ## Public package review
 

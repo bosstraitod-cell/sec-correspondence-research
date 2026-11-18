@@ -47,8 +47,8 @@ both the raw value and an approximate adjustment for a four-session week.
 
 The separate quality-audit example shows why checking original SEC letters matters.
 It reproduces the approved sample-size calculation and draws from synthetic
-letter IDs. It does **not** include the real sample or claim that any letter has
-passed independent review. See [the audit note](docs/QUALITY_AUDIT.md).
+letter IDs. The real sources and reviewer records remain private. See
+[the audit note](docs/QUALITY_AUDIT.md).
 
 ## What I've completed so far
 
@@ -92,16 +92,13 @@ GitHub Actions is configured to run the public tests on Python 3.11, 3.12 and 3.
 
 ## What's still in progress
 
-The data collection and timing work are complete. Text extraction still has
-production checks to finish, and the weekly market series has been constructed
-for development checks but has not been frozen as the final research input.
-
-The current text ledger has **33,974 candidate** numbered comments, not a final
-validated count. A 284-letter random sample for one closing-letter quality gate
-has been frozen, but independent source review was **0/284 as of 18 November
-2026**. Other text and reconciliation checks remain open. The
-[audit note](docs/QUALITY_AUDIT.md) explains exactly what that sample can and
-cannot establish.
+The SEC correspondence corpus and public-date mapping are assembled for source
+review and NLP development. The current text ledger has **33,974 candidate**
+numbered comments, not a final validated count; original-source and
+reconciliation checks must finish before it becomes a production text input.
+The weekly market series has been constructed for development checks but has
+not been frozen as the final research input. The [audit note](docs/QUALITY_AUDIT.md)
+explains one of the text-quality checks.
 
 For the language measure, I've designed a framework using an SEC-specific lexicon
 and contextual NLP/LLM classification. Human-reference coding and model validation
