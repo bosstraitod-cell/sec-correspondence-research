@@ -1,7 +1,8 @@
 # Evidence for the public portfolio
 
-Prepared and locally checked on **2026-11-03**. This is a release audit of the code
-and claims presented here, not a certification of the entire thesis.
+The initial package was locally checked on **2026-11-03**; the quality-audit
+addition was checked on **2026-11-18**. These are release checks of the public
+code and claims, not certification of the entire thesis.
 
 ## What was rechecked
 
@@ -13,9 +14,14 @@ and claims presented here, not a certification of the entire thesis.
   11,585 later archive dates; 11,545 changed Friday weeks; median interval 60 days.
 - The selected original timing module and original tests are byte-identical to
   their private-repository sources.
-- The private repository's existing 39 tests passed. The public package's 18 tests
-  passed separately. These counts overlap because five original timing tests are
-  included in both suites; they must not be added as independent tests.
+- At initial release, the private repository's 39 tests and the public package's
+  18 tests passed separately. These counts overlap because five original timing
+  tests are included in both suites; they must not be added as independent tests.
+- On 2026-11-18, the public package's **23 tests passed**. Five new tests cover
+  the exact finite-population probability, minimal 284-case calculation,
+  reproducible synthetic draw, duplicate rejection, and explicit synthetic label.
+  Running `quality_audit_demo.py` independently returned `N=3,849`, `M=39`,
+  `n=284`, `P0=0.049550284409080284`, and a unique 284-ID synthetic draw.
 
 Machine-readable aggregates and source hashes are in
 [`evidence_summary.json`](evidence_summary.json). The full corpus is private, so
@@ -36,6 +42,14 @@ statistical significance, forecasting performance, or regime result is establish
 Remaining text-extraction production checks and model/validation decisions remain
 outstanding in the thesis.
 
+The new [quality-audit note](QUALITY_AUDIT.md) reports only the approved
+closing-letter sampling rule and the frozen-draw status as of 2026-11-18.
+Its 1% ceiling is project-chosen; its arithmetic is independently checked
+against the [NIST hypergeometric formula](https://www.itl.nist.gov/div898/software/dataplot/refman2/ch8/hyppdf.pdf).
+The public synthetic draw does **not** expose or reproduce the real selected
+accessions, original seed, source files, or reviewer judgments. At this check,
+the independent original-source gate had **0/284 completed judgments**.
+
 ## Public package review
 
 The new package excludes the private repository's Git history and its tracked
@@ -53,3 +67,8 @@ prepared for this public release: they reuse the original parser/calendar functi
 and implement small, independently checked demonstrations of the approved membership
 and RV rules. They do not replace the larger production workflow. Synthetic data
 were created specifically for the demonstration.
+
+`quality_audit_demo.py` is a public adaptation of the private finite-population
+planner and seed-recorded sampler. It demonstrates the arithmetic and algorithm
+on synthetic identifiers only. Its five tests do not constitute source review
+or a passed SEC-text quality gate.

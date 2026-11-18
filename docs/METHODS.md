@@ -3,9 +3,11 @@
 ## Scope
 
 This is a public demonstration of implemented data-handling ideas. The authoritative
-private thesis controls were version 1.56 when this release was prepared on
-2026-11-03. The demonstration creates no production signals, human labels, fitted
-models or SEC–market association tests.
+private thesis controls were version 1.64 when this update was prepared on
+2026-11-18. These demonstrations create no production signals, human labels,
+fitted models or SEC–market association tests. The
+[quality-audit note](QUALITY_AUDIT.md) distinguishes a frozen sample from a
+passed original-source review.
 
 ## Two date roles
 

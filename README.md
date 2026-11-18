@@ -5,9 +5,9 @@ whether negative language in publicly released SEC correspondence is associated
 with S&P 500 volatility in the following week.
 
 Before testing that question, I needed to work out which companies belonged in
-the sample and when each document became public. This repository shares that part
-of the work: a timing-audit script from the thesis, a small example you can run,
-and tests for the main date and data-quality rules.
+the sample and when each document became public. This repository shares part of
+that work: a timing-audit script from the thesis, small offline examples for
+date alignment and source-audit sampling, and tests for the main rules.
 
 The full study is still in progress. I haven't yet estimated the relationship
 between the SEC language measure and market volatility.
@@ -21,6 +21,7 @@ works offline.
 git clone https://github.com/bosstraitod-cell/sec-correspondence-research.git
 cd sec-correspondence-research
 python3 research_demo.py
+python3 quality_audit_demo.py
 python3 -m unittest discover -s tests -v
 ```
 
@@ -43,6 +44,11 @@ code keeps both. Weekend releases move to the following Friday.
 
 The example also calculates weekly volatility from daily closing prices. It shows
 both the raw value and an approximate adjustment for a four-session week.
+
+The separate quality-audit example shows why checking original SEC letters matters.
+It reproduces the approved sample-size calculation and draws from synthetic
+letter IDs. It does **not** include the real sample or claim that any letter has
+passed independent review. See [the audit note](docs/QUALITY_AUDIT.md).
 
 ## What I've completed so far
 
@@ -77,6 +83,10 @@ they can tell us.
   volatility calculations against known answers.
 - [tests/test_sec_information_timing.py](tests/test_sec_information_timing.py)
   contains the original parser tests.
+- [quality_audit_demo.py](quality_audit_demo.py) demonstrates exact
+  finite-population sampling arithmetic and a reproducible draw on synthetic IDs.
+- [tests/test_quality_audit_demo.py](tests/test_quality_audit_demo.py) checks
+  the sample-size boundary, finite-population formula and replay behavior.
 
 GitHub Actions is configured to run the public tests on Python 3.11, 3.12 and 3.13.
 
@@ -85,6 +95,13 @@ GitHub Actions is configured to run the public tests on Python 3.11, 3.12 and 3.
 The data collection and timing work are complete. Text extraction still has
 production checks to finish, and the weekly market series has been constructed
 for development checks but has not been frozen as the final research input.
+
+The current text ledger has **33,974 candidate** numbered comments, not a final
+validated count. A 284-letter random sample for one closing-letter quality gate
+has been frozen, but independent source review was **0/284 as of 18 November
+2026**. Other text and reconciliation checks remain open. The
+[audit note](docs/QUALITY_AUDIT.md) explains exactly what that sample can and
+cannot establish.
 
 For the language measure, I've designed a framework using an SEC-specific lexicon
 and contextual NLP/LLM classification. Human-reference coding and model validation
